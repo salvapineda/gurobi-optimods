@@ -113,6 +113,7 @@ def lpformulator_optimize(alldata, model, opftype):
                 zvar.PStart = 1.0
         model.update()
     model.optimize()
+    model.write("my_model.lp")
 
     # Check model status and re-optimize if numerical trouble or inconclusive results.
     if model.status == GRB.INF_OR_UNBD:
